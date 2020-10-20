@@ -203,11 +203,3 @@ df4.columns=[x[0] if x[1]=='' else '_'.join(x) for x in df4.columns]
 df4=df4.sort_values(['flow_mean'],ascending=False)
 df4.head(5)
 
-
-# In[321]:
-
-
-#len(df),df["key1"].count()
-# df_1=df.drop_duplicates(['key0'], keep='last')
-# repetidos=df.groupby('key2').size().loc[lambda x: x>1]
-
