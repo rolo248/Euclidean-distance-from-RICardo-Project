@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[57]:
-
-
 # python script to build sqlite for visualization
 # coding=utf8
 import subprocess
@@ -11,9 +8,9 @@ import sqlite3
 import os
 import json
 import itertools
-# import utils
+import utils
 import re
-# import custom_exports
+import custom_exports
 import shutil
 import pandas as pd
 import glob
@@ -23,36 +20,7 @@ import numpy as np
 #Set working: C:\Users\Joyas\Desktop\github\ricardo_data\database_scripts
 
 
-# In[50]:
-
-
-# with open("config.json", "r") as f_conf:   #Leo json config y lo llamo como f_conf.
-#     conf=json.load(f_conf)                 # Cargo json.
-#     database_filename=os.path.join('../sqlite_data',conf["sqlite_viz"]) #me devuelvo a la carpeta sqlite_data y utilizo
-#                                                                         # "sqlite_viz" desde el json.
-
-
-# In[51]:
-
-
-# conn=sqlite3.connect('../sqlite_data\\RICardo_viz.sqlite')
-# c=conn.cursor()
-
-
-# In[52]:
-
-
-# create the dataframe from a query
-# df = pd.read_sql_query("SELECT * FROM flows", conn)
-# df
-#csv=pd.read_csv('../data/currencies.csv')
-#csv=df
-
-#csv_files = glob.glob('../data\\*.csv')
-#csv_files
-
-
-# In[53]:
+#Antes de leer csv, se deben compilar las tablas utilizando códigos disponible en:
 
 
 #Read csv
@@ -66,10 +34,6 @@ RICentities_groups=pd.read_csv('../data/RICentities_groups.csv')
 sources=pd.read_csv('../data/sources.csv')
 
 
-# In[79]:
-
-
-# exchange_rates
 
 
 # #### Cruce de tablas obtenidas de Git
@@ -150,11 +114,6 @@ df["flow"] = df["flow"].astype(float)
 df['flujo_unit'] = (df.flow*df.unit)/df.rate_to_pounds   #Convertir flujos a libras.
 
 
-# In[76]:
-
-
-df
-
 
 # #### Creación de tablas para generar ranking
 
@@ -220,22 +179,6 @@ df7=df7.rename(columns={'lat': "lat_partner",'lng':'lng_partner'})
 df7.iloc[7:20,:]
 
 
-# In[67]:
-
-
-# paises_base=df7[~df7["dist"].isnull()]
-# len(paises_base["RICname_reporting"].unique())
-#df8[df8['RICname_reporting']=='United States of America']
-
-
-# In[64]:
-
-
-#
-# x=df7[df7["lat_reporting"].isnull()]
-# x["RICname_reporting"].unique()
-
-
 # #### Calculo de distancia de cada país con sus 5 principales socios comerciales
 
 # In[45]:
@@ -250,7 +193,7 @@ df8.columns=[x[0] if x[1]=='' else '_'.join(x) for x in df8.columns]
 df8
 
 
-# #### Caluculo de distancia de cada país con los 5 principales BLABLA
+# #### Caluculo de distancia de cada país con los 5 principales 
 
 # In[75]:
 
