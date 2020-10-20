@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[107]:
-
-
 # python script to build sqlite for visualization
 # coding=utf8
 import subprocess
@@ -22,37 +19,6 @@ import numpy as np
 
 #Set working: C:\Users\Joyas\Desktop\github\ricardo_data\database_scripts
 
-
-# In[86]:
-
-
-# with open("config.json", "r") as f_conf:   #Leo json config y lo llamo como f_conf.
-#     conf=json.load(f_conf)                 # Cargo json.
-#     database_filename=os.path.join('../sqlite_data',conf["sqlite_viz"]) #me devuelvo a la carpeta sqlite_data y utilizo
-#                                                                         # "sqlite_viz" desde el json.
-
-
-# In[87]:
-
-
-# conn=sqlite3.connect('../sqlite_data\\RICardo_viz.sqlite')
-# c=conn.cursor()
-
-
-# In[88]:
-
-
-# create the dataframe from a query
-# df = pd.read_sql_query("SELECT * FROM flows", conn)
-# df
-#csv=pd.read_csv('../data/currencies.csv')
-#csv=df
-
-#csv_files = glob.glob('../data\\*.csv')
-#csv_files
-
-
-# In[434]:
 
 
 #Read csv
